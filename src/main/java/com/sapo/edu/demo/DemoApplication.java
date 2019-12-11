@@ -17,14 +17,15 @@ public class DemoApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         Customer customer = new Customer("ABC", "1234", new BigDecimal(5000000));
 
-        Atm atm = new Atm();
-        atm.printCurrentMoney();
-        atm.displayCustomerInfo(customer);
-        atm.withDraw(customer, new BigDecimal(200000));
-        atm.printCurrentMoney();
-        atm.withDraw(customer, new BigDecimal(10000000));
-        atm.printCurrentMoney();
-        atm.deposit(customer,new BigDecimal(1000000));
-        atm.printCurrentMoney();
+        //Demo function
+        Atm bidvAtm = new BidvAtm();
+        bidvAtm.printCurrentMoney();
+        bidvAtm.displayCustomerInfo(customer);
+        bidvAtm.withDraw(customer, new BigDecimal(200000));
+        bidvAtm.printCurrentMoney();
+        bidvAtm.withDraw(customer, new BigDecimal(10000000));
+        bidvAtm.printCurrentMoney();
+        bidvAtm.deposit(customer,new BigDecimal(1000000));
+        bidvAtm.printCurrentMoney();
     }
 }
