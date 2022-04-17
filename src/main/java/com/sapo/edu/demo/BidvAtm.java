@@ -1,7 +1,10 @@
 package com.sapo.edu.demo;
 
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 
+@Component
 public class BidvAtm implements Atm {
     private BigDecimal moneyAtm = new BigDecimal(1000000);
 

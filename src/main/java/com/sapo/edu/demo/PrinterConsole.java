@@ -1,5 +1,8 @@
 package com.sapo.edu.demo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PrinterConsole implements Printer {
     @Override
     public void printCustoner(Customer customer) {
