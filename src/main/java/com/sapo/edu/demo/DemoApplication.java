@@ -1,5 +1,5 @@
 package com.sapo.edu.demo;
-
+import java.util.Scanner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,14 @@ public class DemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Customer customer = new Customer("ABC", "1234", new BigDecimal(5000000));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Account: ");
+        String account = scanner.nextLine();
+        System.out.println("Enter pin: ");
+        String pin = scanner.nextLine();
+        System.out.println("Enter balance: ");
+        String balance = scanner.nextLine();
+        Customer customer = new Customer(account, pin, new BigDecimal(balance));
 
         //Demo function
         Atm bidvAtm = new BidvAtm();

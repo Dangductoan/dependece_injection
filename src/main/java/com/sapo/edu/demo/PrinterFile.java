@@ -1,9 +1,11 @@
 package com.sapo.edu.demo;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
-@Component("PrinterConsole")
-public class PrinterConsole implements Printer {
+@Component("PrinterFiler")
+public class PrinterFile implements Printer {
+    private static final Logger logger = LogManager.getLogger(PrinterFile.class);
     @Override
     public void printCustomer(Customer customer) {
         System.out.println("CustomerId: " + customer.getAcctNo() + ", balance: " + customer.getBalance().toString());
@@ -11,15 +13,16 @@ public class PrinterConsole implements Printer {
 
     @Override
     public void printMessage(String message) {
-        System.out.println(message);
+
+        logger.info(message);
     }
     @Override
     public void printError(String error) {
-        System.out.println(error);
+        logger.error(error);
     }
     @Override
     public void printWarn(String warn) {
-        System.out.println(warn);
+        logger.warn(warn);
     }
 
 }
